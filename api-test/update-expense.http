@@ -1,0 +1,9 @@
+PUT http://localhost:8080/expenses/2
+Content-Type: application/json
+
+{
+  "description": "This expense was updated!",
+  "category": "Updated category!",
+  "amount": 666.69,
+  "dateTime": "2026-01-01T16:00:00.000Z"
+}
