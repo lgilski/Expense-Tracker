@@ -1,5 +1,6 @@
 PUT http://localhost:8080/expenses/2
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJleHAiOjE3OTMxMzA1NDQsInVzZXJJZCI6MX0._Sta6DvXHslxrIOd2Z8g6vUzdhvPbERhVvZ4UkNCItI
 
 {
   "description": "This expense was updated!",

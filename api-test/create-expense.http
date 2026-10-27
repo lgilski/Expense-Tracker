@@ -1,5 +1,6 @@
 POST http://localhost:8080/expenses
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJleHAiOjE3OTMxMzA1NDQsInVzZXJJZCI6MX0._Sta6DvXHslxrIOd2Z8g6vUzdhvPbERhVvZ4UkNCItI
 
 {
   "description": "TEST",

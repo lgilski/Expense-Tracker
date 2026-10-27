@@ -1,6 +1,8 @@
 package models
 
 import (
+	"errors"
+
 	"exampl.com/expense-tracker/db"
 	"exampl.com/expense-tracker/utils"
 )
@@ -45,6 +47,22 @@ func (u *User) Save() error {
 	return nil
 }
 
-func (u User) ValidateCredentials() {
+func (u *User) ValidateCredentials() error {
+	query := "SELECT id, password FROM users WHERE email = ?"
+	row := db.DB.QueryRow(query, u.Email)
 
+	var retrievedPassword string
+	err := row.Scan(&u.ID, &retrievedPassword)
+
+	if err != nil {
+		return errors.New("Credentials invalid")
+	}
+
+	passwordIsValid := utils.CheckPasswordHash(u.Password, retrievedPassword)
+
+	if !passwordIsValid {
+		return errors.New("Credentials invalid")
+	}
+
+	return nil
 }
